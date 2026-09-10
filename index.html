@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>modhome</title>
-<meta name="description" content="modhome — award-winning luxury interior design studio. Residences, show flats, sales centres and commercial spaces across China, Singapore and Hong Kong.">
+<meta name="description" content="modhome — luxury interior design studio of Jay Li (李天弘), Andrew Martin Global Top 100 designer. Bespoke residences, show flats, sales galleries and commercial spaces across Singapore, China and Hong Kong.">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap">
@@ -27,6 +27,10 @@ a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 [lang-en],[lang-zh]{display:none}
+.r-sg,.r-intl{display:none}
+body[data-region="sg"] .r-sg{display:inline}
+body[data-region="intl"] .r-intl{display:inline}
+body[data-region="sg"] .r-sg.blk,body[data-region="intl"] .r-intl.blk{display:block}
 body[data-lang="en"] [lang-en]{display:inline}
 body[data-lang="zh"] [lang-zh]{display:inline}
 body[data-lang="en"] .blk[lang-en],body[data-lang="zh"] .blk[lang-zh]{display:block}
@@ -148,7 +152,7 @@ section{padding:112px 0}
 @media (max-width:900px){.studio-grid{grid-template-columns:1fr;gap:40px}.studio-list li{grid-template-columns:1fr;gap:6px}}
 
 /* awards */
-.awards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.awards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .award p{margin:0;color:var(--ink2);font-size:15.5px}
 .award p b{font-weight:600;color:var(--ink)}
 .award{border:1px solid var(--line);border-top:2px solid var(--accent);padding:32px 28px;display:flex;flex-direction:column;gap:18px;min-height:220px;background:#fff}
@@ -199,6 +203,20 @@ textarea{min-height:110px;resize:vertical}
 .f.invalid input,.f.invalid textarea{border-bottom-color:#B4542F}
 @media (max-width:900px){.enq-grid{grid-template-columns:1fr;gap:44px}form{grid-template-columns:1fr;padding:28px 22px}}
 
+
+/* Singapore edition: Qanvast panel replaces the form */
+.qanvast{display:none;background:#fff;border:1px solid var(--line);border-top:2px solid var(--accent);padding:40px;box-shadow:0 30px 60px -45px rgba(60,45,15,.35);flex-direction:column;gap:18px}
+.qanvast h3{font-size:clamp(26px,2.6vw,34px)}
+.qanvast p{margin:0;color:var(--ink2)}
+.q-steps{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:10px}
+.q-steps li{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:baseline;color:var(--ink2)}
+.q-steps b{font-family:var(--display);font-style:italic;font-weight:400;color:var(--accent);font-size:22px}
+.q-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.qanvast small{color:var(--mute);font-size:13px}
+body[data-region="sg"] #enq{display:none}
+body[data-region="sg"] .qanvast{display:flex}
+@media (max-width:900px){.qanvast{padding:28px 22px}}
+
 /* footer */
 footer{border-top:1px solid var(--gold-light);padding:40px 0;font-size:13px;color:var(--mute);letter-spacing:.06em}
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
@@ -245,14 +263,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
   <section class="hero" style="padding-bottom:0">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <span class="eyebrow"><span lang-en>Andrew Martin Global Top 100 · 40 Under 40 · Singapore &amp; China</span><span lang-zh>安德鲁·马丁全球 TOP 100 · 40 UNDER 40 · 新加坡 &amp; 中国</span></span>
+        <span class="eyebrow"><span class="r-intl"><span lang-en>Jay Li · Andrew Martin Global Top 100 · 40 Under 40 · Singapore &amp; China</span><span lang-zh>李天弘 · 安德鲁·马丁全球 TOP 100 · 40 UNDER 40 · 新加坡 &amp; 中国</span></span><span class="r-sg"><span lang-en>Singapore · Jay Li · Andrew Martin Global Top 100 · 40 Under 40</span><span lang-zh>新加坡 · 李天弘 · 安德鲁·马丁全球 TOP 100 · 40 UNDER 40</span></span></span>
         <h1>
           <span class="blk" lang-en>Interiors of rare <em>distinction</em>, composed with quiet <em>authority</em>.</span>
           <span class="blk" lang-zh>以克制之<em>美</em>，成就非凡之<em>境</em>。</span>
         </h1>
         <p class="lead">
-          <span lang-en>modhome is the Singapore studio of Jay — an Andrew Martin Global Top 100 designer — creating bespoke whole-house residences, show flats, sales galleries and hospitality spaces for discerning private clients and developers. Thirty-eight commissions across China, Singapore and Hong Kong, each conceived with precision, realised with craft, and made to be remembered.</span>
-          <span lang-zh>modhome 由安德鲁·马丁全球 TOP 100 设计师 Jay 主理，立足新加坡，为眼光独到的私人业主与开发商打造高端全屋定制私宅、样板间、售楼处与商业空间。三十八个作品，遍及中国、新加坡与香港——每一处皆以精准构思、以匠心落成，值得被铭记。</span>
+          <span class="r-intl"><span lang-en>modhome is the Singapore studio of Jay Li (李天弘), founder of MOD 穆德设计 and an Andrew Martin Global Top 100 designer, creating bespoke whole-house residences, show flats, sales galleries and hospitality spaces for discerning private clients and developers. Thirty-eight commissions across China, Singapore and Hong Kong, each conceived with precision, realised with craft, and made to be remembered.</span></span><span class="r-sg"><span lang-en>modhome is the Singapore studio of Jay Li (李天弘), founder of MOD 穆德设计 and an Andrew Martin Global Top 100 designer. We create bespoke whole-house interiors for landed homes, Good Class Bungalows, penthouses and condominiums across Singapore, alongside show flats and sales galleries for developers — thirty-eight commissions across Singapore, China and Hong Kong, each conceived with precision, realised with craft, and made to be remembered.</span></span>
+          <span class="r-intl"><span lang-zh>modhome 由穆德设计（MOD）创始人、安德鲁·马丁全球 TOP 100 设计师李天弘（Jay Li）主理，立足新加坡，为眼光独到的私人业主与开发商打造高端全屋定制私宅、样板间、售楼处与商业空间。三十八个作品，遍及中国、新加坡与香港——每一处皆以精准构思、以匠心落成，值得被铭记。</span></span><span class="r-sg"><span lang-zh>modhome 由穆德设计（MOD）创始人、安德鲁·马丁全球 TOP 100 设计师李天弘（Jay Li）主理，立足新加坡。我们为新加坡的有地住宅、优质洋房（GCB）、顶层公寓与共管公寓提供高端全屋定制设计，并为开发商打造样板间与售楼处——三十八个作品，遍及新加坡、中国与香港，每一处皆以精准构思、以匠心落成，值得被铭记。</span></span>
         </p>
         <div class="hero-ctas">
           <a class="btn solid" href="#enquire"><span lang-en>Enquire now</span><span lang-zh>立即咨询</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -268,7 +286,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
       <div class="wrap">
         <div><b>38</b><span><span lang-en>Completed projects</span><span lang-zh>落地项目</span></span></div>
         <div><b>7</b><span><span lang-en>Space types · from show flats to restaurants</span><span lang-zh>空间类型 · 从样板间到餐饮空间</span></span></div>
-        <div><b>15+</b><span><span lang-en>Cities across China, SG &amp; HK</span><span lang-zh>覆盖城市 · 中国 / 新加坡 / 香港</span></span></div>
+        <div><b><span class="r-intl">15+</span><span class="r-sg">SG</span></b><span><span class="r-intl"><span lang-en>Cities across China, SG &amp; HK</span><span lang-zh>覆盖城市 · 中国 / 新加坡 / 香港</span></span><span class="r-sg"><span lang-en>Singapore studio · also China &amp; Hong Kong</span><span lang-zh>新加坡工作室 · 兼顾中国与香港</span></span></span></div>
         <div><b>Top 100</b><span><span lang-en>Andrew Martin global designers</span><span lang-zh>安德鲁·马丁全球设计师</span></span></div>
       </div>
     </div>
@@ -294,7 +312,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
       <div>
         <span class="eyebrow"><span lang-en>The studio</span><span lang-zh>关于我们</span></span>
         <h2 style="margin-top:12px"><span lang-en>Design that performs — commercially and emotionally.</span><span lang-zh>兼具商业价值与情感温度的设计。</span></h2>
-        <p><span lang-en>Led by <b>Jay</b> — named among Andrew Martin's Global Top 100 designers and a 40 Under 40 China Outstanding Young Designer — modhome works at the intersection of luxury and return on investment. For developers such as C&amp;D, China Merchants, Poly and CRCC, our show flats and sales centres are built to convert visitors into buyers. For private clients, we design homes that hold up to daily life as beautifully as they photograph.</span><span lang-zh>由 <b>Jay</b>（安德鲁·马丁全球 TOP 100 设计师、40 UNDER 40 中国杰出青年设计师）领衔，modhome 在奢华美学与投资回报之间找到平衡。我们为建发、招商、保利、中铁建等开发商打造的样板间与售楼处，以促成成交为目标；为私人业主设计的家，则既经得起镜头，也经得起生活。</span></p>
+        <p><span lang-en>modhome is directed by <b>Jay Li (李天弘)</b>, founder of MOD 穆德设计. Named among Andrew Martin's Global Top 100 designers, a 40 Under 40 China Outstanding Young Designer and one of China's Top Ten Outstanding Youth in the decoration industry, Jay is known across the region for his analysis of how sales galleries and residential interiors in Chinese real estate compare with international markets — and for closing that gap in built work. The studio works at the intersection of luxury and return on investment. For developers such as C&amp;D, China Merchants, Poly and CRCC, our show flats and sales centres are built to convert visitors into buyers. For private clients, we design homes that hold up to daily life as beautifully as they photograph.</span><span lang-zh>modhome 由穆德设计（MOD）创始人<b>李天弘（Jay Li）</b>主理。他入选安德鲁·马丁全球 TOP 100 设计师、40 UNDER 40 中国杰出青年设计师，并获评中国装饰行业十大杰出青年；其关于中国地产售楼处与住宅设计同国际市场差距的分析，在设计界广受关注——而他的作品正是在弥合这一差距。modhome 在奢华美学与投资回报之间找到平衡。我们为建发、招商、保利、中铁建等开发商打造的样板间与售楼处，以促成成交为目标；为私人业主设计的家，则既经得起镜头，也经得起生活。</span></p>
         <p><span lang-en>Every project begins with the question of who will walk through the door — and what they should feel in the first ten seconds.</span><span lang-zh>每个项目都始于同一个问题：谁会走进这扇门，他们在最初十秒应感受到什么。</span></p>
         <ul class="studio-list">
           <li><b><span lang-en>Residential</span><span lang-zh>住宅</span></b><span><span lang-en>Show flats, villas, lofts and private residences — 15 commissions</span><span lang-zh>样板间、别墅、LOFT 与私宅 — 15 个作品</span></span></li>
@@ -316,6 +334,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
       <div class="awards-grid">
         <div class="award"><svg class="laurel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3v18M12 21c-3-1-6-4-6-8M12 21c3-1 6-4 6-8M12 17c-2-.5-4-2.5-4-5M12 17c2-.5 4-2.5 4-5M12 13c-1.5-.5-3-2-3-4M12 13c1.5-.5 3-2 3-4"/></svg><h3><span lang-en>Andrew Martin International Interior Design Awards</span><span lang-zh>安德鲁·马丁国际室内设计大奖</span></h3><p><span lang-en>Named among the <b>Global Top 100</b> interior designers — the industry's most widely cited international honour.</span><span lang-zh>入选<b>全球 TOP 100</b> 设计师——被誉为室内设计界的"奥斯卡"。</span></p><span><span lang-en>Global Top 100 Designers</span><span lang-zh>全球 TOP 100 设计师</span></span></div>
         <div class="award"><svg class="laurel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3v18M12 21c-3-1-6-4-6-8M12 21c3-1 6-4 6-8M12 17c-2-.5-4-2.5-4-5M12 17c2-.5 4-2.5 4-5M12 13c-1.5-.5-3-2-3-4M12 13c1.5-.5 3-2 3-4"/></svg><h3><span lang-en>40 UNDER 40</span><span lang-zh>40 UNDER 40</span></h3><p><span lang-en>Recognised as a <b>China Outstanding Young Designer</b> — the national list of the country's most influential designers under forty.</span><span lang-zh>获评<b>中国杰出青年设计师</b>——中国设计界最具影响力的四十岁以下设计师榜单。</span></p><span><span lang-en>China Outstanding Young Designer</span><span lang-zh>中国杰出青年设计师</span></span></div>
+        <div class="award"><svg class="laurel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3v18M12 21c-3-1-6-4-6-8M12 21c3-1 6-4 6-8M12 17c-2-.5-4-2.5-4-5M12 17c2-.5 4-2.5 4-5M12 13c-1.5-.5-3-2-3-4M12 13c1.5-.5 3-2 3-4"/></svg><h3><span lang-en>Top Ten Outstanding Youth</span><span lang-zh>十大杰出青年</span></h3><p><span lang-en>Honoured as one of China's <b>Top Ten Outstanding Youth in the Decoration Industry</b> — a national distinction for leadership in the built-interiors profession.</span><span lang-zh>荣获<b>中国装饰行业十大杰出青年</b>——表彰室内装饰行业领军人物的全国性荣誉。</span></p><span><span lang-en>China Decoration Industry</span><span lang-zh>中国装饰行业</span></span></div>
       </div>
       <div class="clients">
         <span class="eyebrow"><span lang-en>Trusted by</span><span lang-zh>合作客户</span></span>
@@ -346,8 +365,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
     <div class="wrap enq-grid">
       <div class="enq-side">
         <span class="eyebrow"><span lang-en>Enquire</span><span lang-zh>预约咨询</span></span>
-        <h2 style="margin-top:12px"><span lang-en>Tell us about your space.</span><span lang-zh>聊聊您的空间。</span></h2>
-        <p><span lang-en>Share a few details and we'll come back within one working day with next steps. Developer briefs, private residences and commercial fit-outs are all welcome.</span><span lang-zh>留下几项信息，我们将在一个工作日内回复下一步安排。欢迎开发商项目、私人住宅与商业空间咨询。</span></p>
+        <h2 style="margin-top:12px"><span class="r-intl"><span lang-en>Tell us about your space.</span><span lang-zh>聊聊您的空间。</span></span><span class="r-sg"><span lang-en>Tell us about your home.</span><span lang-zh>聊聊您的家。</span></span></h2>
+        <p><span class="r-intl"><span lang-en>Share a few details and we'll come back within one working day with next steps. Developer briefs, private residences and commercial fit-outs are all welcome.</span><span lang-zh>留下几项信息，我们将在一个工作日内回复下一步安排。欢迎开发商项目、私人住宅与商业空间咨询。</span></span><span class="r-sg"><span lang-en>Share a few details and we'll come back within one working day with next steps. Landed homes, condominiums, penthouses and premium HDB renovations are all welcome — as are show flats and commercial fit-outs. WhatsApp is the quickest way to reach us.</span><span lang-zh>留下几项信息，我们将在一个工作日内回复下一步安排。欢迎有地住宅、共管公寓、顶层公寓与高端组屋翻新咨询，亦承接样板间与商业空间。WhatsApp 联系最为便捷。</span></span></p>
         <ul class="contact-list">
           <li><b><span lang-en>WhatsApp</span><span lang-zh>WhatsApp</span></b><a href="https://wa.me/6596908181" target="_blank" rel="noopener">+65 9690 8181</a></li>
           <li><b><span lang-en>Email</span><span lang-zh>邮箱</span></b><a href="mailto:[hello@modhome.design]">[hello@modhome.design]</a></li>
@@ -357,28 +376,31 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
         </ul>
         <a class="wa" href="https://wa.me/6596908181?text=Hello%20modhome%2C%20I%27d%20like%20to%20enquire%20about%20an%20interior%20design%20project." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2l-.5-.3z"/></svg><span lang-en>Chat on WhatsApp</span><span lang-zh>WhatsApp 即时沟通</span></a>
       </div>
+      <div class="qanvast" id="qanvast">
+        <span class="eyebrow"><span lang-en>Singapore enquiries</span><span lang-zh>新加坡咨询</span></span>
+        <h3><span lang-en>Request a quote through Qanvast.</span><span lang-zh>通过 Qanvast 提交报价申请。</span></h3>
+        <p><span lang-en>For homes in Singapore we take enquiries through Qanvast, the platform for vetted interior design firms. Tell them about your property, budget and timeline and ask to be matched with <b>modhome</b>; we reply within one working day.</span><span lang-zh>新加坡的住宅项目，请通过 Qanvast（新加坡认证室内设计公司平台）提交咨询。请填写您的物业类型、预算与时间表，并注明希望匹配 <b>modhome</b>；我们将在一个工作日内回复。</span></p>
+        <ul class="q-steps">
+          <li><b>1</b><span><span lang-en>Open the Qanvast quote request</span><span lang-zh>打开 Qanvast 报价申请</span></span></li>
+          <li><b>2</b><span><span lang-en>Describe your property, budget and key-collection date</span><span lang-zh>填写物业、预算与交房日期</span></span></li>
+          <li><b>3</b><span><span lang-en>Mention modhome as your preferred firm</span><span lang-zh>注明首选 modhome</span></span></li>
+        </ul>
+        <div class="q-actions">
+          <a class="btn solid" href="https://qanvast.com/sg/quote-request?from=desktop-nav-cta&amp;ref=https%3A%2F%2Fqanvast.com%2Fsg" target="_blank" rel="noopener"><span lang-en>Request a quote on Qanvast</span><span lang-zh>前往 Qanvast 申请报价</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+          <a class="btn" href="https://wa.me/6596908181?text=Hello%20modhome%2C%20I%27d%20like%20to%20enquire%20about%20an%20interior%20design%20project." target="_blank" rel="noopener"><span lang-en>Or WhatsApp us</span><span lang-zh>或 WhatsApp 联系</span></a>
+        </div>
+        <small><span lang-en>Developers and commercial clients: WhatsApp or email us directly.</span><span lang-zh>开发商与商业客户：请直接通过 WhatsApp 或邮件联系。</span></small>
+      </div>
       <form id="enq" novalidate>
         <div class="f"><label for="name"><span lang-en>Name</span><span lang-zh>姓名</span></label><input id="name" name="name" autocomplete="name" required><span class="err"><span lang-en>Please enter your name.</span><span lang-zh>请填写姓名。</span></span></div>
         <div class="f"><label for="company"><span lang-en>Company (optional)</span><span lang-zh>公司（选填）</span></label><input id="company" name="company" autocomplete="organization"></div>
         <div class="f"><label for="email"><span lang-en>Email</span><span lang-zh>邮箱</span></label><input id="email" name="email" type="email" autocomplete="email" required><span class="err"><span lang-en>Please enter a valid email.</span><span lang-zh>请填写有效邮箱。</span></span></div>
         <div class="f"><label for="phone"><span lang-en>Phone / WhatsApp</span><span lang-zh>电话 / WhatsApp</span></label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
         <div class="f"><label for="ptype"><span lang-en>Project type</span><span lang-zh>项目类型</span></label>
-          <select id="ptype" name="project_type">
-            <option value="Show flat / sales centre">Show flat · Sales centre / 样板间 · 售楼处</option>
-            <option value="Private residence">Private residence / 私人住宅</option>
-            <option value="Commercial / hospitality">Commercial · Hospitality / 商业 · 餐饮</option>
-            <option value="Office / workplace">Office · Workplace / 办公空间</option>
-            <option value="Other">Other / 其他</option>
-          </select></div>
+          <select id="ptype" name="project_type"></select></div>
         <div class="f"><label for="location"><span lang-en>Location &amp; size</span><span lang-zh>项目地点与面积</span></label><input id="location" name="location" placeholder="e.g. Shanghai · 320 m²"></div>
         <div class="f"><label for="budget"><span lang-en>Indicative budget</span><span lang-zh>预算范围</span></label>
-          <select id="budget" name="budget">
-            <option value="">— / —</option>
-            <option>Under ¥1M / 100万以下</option>
-            <option>¥1M – ¥3M / 100–300万</option>
-            <option>¥3M – ¥10M / 300–1000万</option>
-            <option>Over ¥10M / 1000万以上</option>
-          </select></div>
+          <select id="budget" name="budget"></select></div>
         <div class="f"><label for="timeline"><span lang-en>Target start</span><span lang-zh>期望启动时间</span></label><input id="timeline" name="timeline" placeholder="e.g. Q1 2027"></div>
         <div class="f full"><label for="message"><span lang-en>About the project</span><span lang-zh>项目描述</span></label><textarea id="message" name="message" required></textarea><span class="err"><span lang-en>Tell us a little about the project.</span><span lang-zh>请简单描述您的项目。</span></span></div>
         <div class="f-msg" id="fmsg"></div>
@@ -396,6 +418,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
     <span class="logo"><img src="img/logo-tagline.png" alt="modhome — designed for living"></span>
     <span><span lang-en>© 2026 modhome interior design · All rights reserved</span><span lang-zh>© 2026 modhome 室内设计 · 版权所有</span></span>
     <span>[hello@modhome.design]</span>
+    <button id="region-toggle" style="font:inherit;letter-spacing:inherit;color:var(--mute);border-bottom:1px solid var(--line2)"></button>
   </div>
 </footer>
 
@@ -423,6 +446,34 @@ const CATS = {"showflat": {"en": "Show Flats", "zh": "样板间"}, "residence": 
 const FORM_ENDPOINT = "https://api.web3forms.com/submit"; // e.g. https://api.web3forms.com/submit  (leave blank for preview)
 const FORM_KEY = "[PASTE-WEB3FORMS-ACCESS-KEY]";
 
+// ---------- region (Singapore edition) ----------
+const REGION_OPTS = {
+  sg: { ptype:[["Landed / Good Class Bungalow","Landed · GCB / 有地住宅 · 优质洋房"],["Condominium / Penthouse","Condominium · Penthouse / 共管公寓 · 顶层公寓"],["HDB premium renovation","HDB premium renovation / 高端组屋翻新"],["Show flat / sales gallery","Show flat · Sales gallery / 样板间 · 售楼处"],["Commercial / F&B","Commercial · F&B / 商业 · 餐饮"],["Other","Other / 其他"]],
+        budget:["Under S$150k / 15万新元以下","S$150k – S$300k / 15–30万新元","S$300k – S$600k / 30–60万新元","S$600k – S$1M / 60–100万新元","Over S$1M / 100万新元以上"],
+        loc:"e.g. Bukit Timah · 3,200 sq ft", when:"e.g. TOP / key collection Q1 2027" },
+  intl: { ptype:[["Show flat / sales centre","Show flat · Sales centre / 样板间 · 售楼处"],["Private residence","Private residence / 私人住宅"],["Commercial / hospitality","Commercial · Hospitality / 商业 · 餐饮"],["Office / workplace","Office · Workplace / 办公空间"],["Other","Other / 其他"]],
+        budget:["Under ¥1M / 100万以下","¥1M – ¥3M / 100–300万","¥3M – ¥10M / 300–1000万","Over ¥10M / 1000万以上"],
+        loc:"e.g. Shanghai · 320 m²", when:"e.g. Q1 2027" }
+};
+function detectRegion(){
+  try{ const q=new URLSearchParams(location.search).get("region"); if(q==="sg"||q==="intl") return q; }catch(e){}
+  try{ const s=localStorage.getItem("modhome-region"); if(s==="sg"||s==="intl") return s; }catch(e){}
+  try{ const tz=Intl.DateTimeFormat().resolvedOptions().timeZone||""; if(tz==="Asia/Singapore") return "sg"; }catch(e){}
+  try{ if((navigator.languages||[navigator.language]).some(l=>/-SG$/i.test(l))) return "sg"; }catch(e){}
+  return "intl";
+}
+let region = detectRegion();
+function setRegion(r, remember){
+  region=r; document.body.dataset.region=r; const o=REGION_OPTS[r];
+  const pt=document.getElementById("ptype"); pt.innerHTML=o.ptype.map(([v,l])=>`<option value="${v}">${l}</option>`).join("");
+  const bd=document.getElementById("budget"); bd.innerHTML=`<option value="">— / —</option>`+o.budget.map(v=>`<option>${v}</option>`).join("");
+  document.getElementById("location").placeholder=o.loc; document.getElementById("timeline").placeholder=o.when;
+  const t=document.getElementById("region-toggle"); if(t) t.textContent = r==="sg" ? (lang==="zh"?"新加坡版 · 切换国际版":"Singapore edition · view international") : (lang==="zh"?"国际版 · 切换新加坡版":"International edition · view Singapore");
+  if(remember){ try{ localStorage.setItem("modhome-region", r); }catch(e){} }
+  renderGrid();
+}
+document.getElementById("region-toggle").addEventListener("click",()=>setRegion(region==="sg"?"intl":"sg", true));
+
 // ---------- language ----------
 let lang = "en";
 try{ const s = localStorage.getItem("modhome-lang"); if(s==="zh"||s==="en") lang = s; else if(/^zh/i.test(navigator.language)) lang="zh"; }catch(e){}
@@ -430,7 +481,7 @@ function setLang(l){
   lang = l; document.body.dataset.lang = l; document.documentElement.lang = l==="zh"?"zh-CN":"en";
   document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.lang===l));
   try{ localStorage.setItem("modhome-lang", l); }catch(e){}
-  renderGrid(); if(current!=null) fillLightbox(current);
+  renderGrid(); if(current!=null) fillLightbox(current); if(document.body.dataset.region) setRegion(document.body.dataset.region,false);
 }
 document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
 
@@ -442,7 +493,7 @@ mm.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>mm.classList.
 // ---------- grid ----------
 const grid = document.getElementById("grid");
 let cat = "all", showAll = false; const INITIAL = 9;
-function visible(){ return PROJECTS.filter(p=>cat==="all"||p.cat===cat); }
+function visible(){ const l=PROJECTS.filter(p=>cat==="all"||p.cat===cat); if(region==="sg"){ const sg=l.filter(p=>p.loc_en==="Singapore"), rest=l.filter(p=>p.loc_en!=="Singapore"); return sg.concat(rest); } return l; }
 function renderGrid(){
   const list = visible(); const slice = showAll||cat!=="all" ? list : list.slice(0,INITIAL);
   grid.classList.toggle("filtered", cat!=="all");
@@ -488,7 +539,7 @@ form.addEventListener("submit", async e=>{
   form.querySelectorAll(".f").forEach(f=>f.classList.remove("invalid"));
   ["name","email","message"].forEach(id=>{ const el=document.getElementById(id); const bad = !el.value.trim() || (id==="email" && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value)); if(bad){ el.closest(".f").classList.add("invalid"); ok=false; } });
   if(!ok) return;
-  const data = Object.fromEntries(new FormData(form).entries()); data.lang = lang; data.submitted_at = new Date().toISOString(); data.page = location.href;
+  const data = Object.fromEntries(new FormData(form).entries()); data.lang = lang; data.region = region; data.submitted_at = new Date().toISOString(); data.page = location.href;
   const btn = form.querySelector('button[type=submit]'); btn.disabled = true;
   fmsg.className = "f-msg show"; fmsg.textContent = lang==="zh" ? "正在发送…" : "Sending…";
   try{
@@ -508,7 +559,7 @@ form.addEventListener("submit", async e=>{
   btn.disabled = false;
 });
 
-setLang(lang);
+setLang(lang); setRegion(region, false);
 </script>
 
 </body>
