@@ -85,7 +85,7 @@ footer .logo img{height:40px}
 .strip div:last-child{border-right:0}
 .strip div+div{padding-left:24px}
 .strip b{display:block;font-family:var(--display);font-size:34px;font-weight:400;line-height:1;color:var(--ink);margin-bottom:8px;font-variant-numeric:tabular-nums}
-.strip span{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);font-weight:500}
+.strip > div > span{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);font-weight:500}
 @media (max-width:900px){.strip .wrap{grid-template-columns:1fr 1fr}.strip div:nth-child(2){border-right:0}.strip div:nth-child(n+3){border-top:1px solid var(--line)}.strip div:nth-child(3){padding-left:0}}
 
 /* sections */
@@ -148,11 +148,13 @@ section{padding:112px 0}
 @media (max-width:900px){.studio-grid{grid-template-columns:1fr;gap:40px}.studio-list li{grid-template-columns:1fr;gap:6px}}
 
 /* awards */
-.awards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.awards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.award p{margin:0;color:var(--ink2);font-size:15.5px}
+.award p b{font-weight:600;color:var(--ink)}
 .award{border:1px solid var(--line);border-top:2px solid var(--accent);padding:32px 28px;display:flex;flex-direction:column;gap:18px;min-height:220px;background:#fff}
 .award .laurel{width:38px;height:38px;color:var(--accent)}
-.award h3{font-size:22px}
-.award span{color:var(--mute);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;margin-top:auto;font-weight:500}
+.award h3{font-size:24px}
+.award > span{color:var(--mute);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;margin-top:auto;font-weight:500}
 .award.ph{border-style:dashed;border-color:var(--line2);border-top:2px solid var(--gold-light)}
 @media (max-width:900px){.awards-grid{grid-template-columns:1fr}}
 .clients{margin-top:64px;border-top:1px solid var(--line);padding-top:32px;display:flex;flex-wrap:wrap;gap:16px 40px;align-items:baseline}
@@ -243,14 +245,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
   <section class="hero" style="padding-bottom:0">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <span class="eyebrow"><span lang-en>Internationally awarded · China · Singapore · Hong Kong</span><span lang-zh>屡获国际大奖的室内设计 · 中国 · 新加坡 · 香港</span></span>
+        <span class="eyebrow"><span lang-en>Andrew Martin Global Top 100 · 40 Under 40 · Singapore &amp; China</span><span lang-zh>安德鲁·马丁全球 TOP 100 · 40 UNDER 40 · 新加坡 &amp; 中国</span></span>
         <h1>
           <span class="blk" lang-en>Interiors of rare <em>distinction</em>, composed with quiet <em>authority</em>.</span>
           <span class="blk" lang-zh>以克制之<em>美</em>，成就非凡之<em>境</em>。</span>
         </h1>
         <p class="lead">
-          <span lang-en>modhome is an internationally awarded studio creating private residences, show flats, sales galleries and hospitality spaces for discerning developers and private clients. Thirty-eight commissions across China, Singapore and Hong Kong — each conceived with precision, realised with craft, and made to be remembered.</span>
-          <span lang-zh>modhome 是屡获国际大奖的室内设计工作室，为眼光独到的开发商与私人业主打造私宅、样板间、售楼处与商业空间。三十八个作品，遍及中国、新加坡与香港——每一处皆以精准构思、以匠心落成，值得被铭记。</span>
+          <span lang-en>modhome is the Singapore studio of Jay — an Andrew Martin Global Top 100 designer — creating bespoke whole-house residences, show flats, sales galleries and hospitality spaces for discerning private clients and developers. Thirty-eight commissions across China, Singapore and Hong Kong, each conceived with precision, realised with craft, and made to be remembered.</span>
+          <span lang-zh>modhome 由安德鲁·马丁全球 TOP 100 设计师 Jay 主理，立足新加坡，为眼光独到的私人业主与开发商打造高端全屋定制私宅、样板间、售楼处与商业空间。三十八个作品，遍及中国、新加坡与香港——每一处皆以精准构思、以匠心落成，值得被铭记。</span>
         </p>
         <div class="hero-ctas">
           <a class="btn solid" href="#enquire"><span lang-en>Enquire now</span><span lang-zh>立即咨询</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -267,7 +269,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
         <div><b>38</b><span><span lang-en>Completed projects</span><span lang-zh>落地项目</span></span></div>
         <div><b>7</b><span><span lang-en>Space types · from show flats to restaurants</span><span lang-zh>空间类型 · 从样板间到餐饮空间</span></span></div>
         <div><b>15+</b><span><span lang-en>Cities across China, SG &amp; HK</span><span lang-zh>覆盖城市 · 中国 / 新加坡 / 香港</span></span></div>
-        <div><b>[N]</b><span><span lang-en>International design awards</span><span lang-zh>国际设计大奖</span></span></div>
+        <div><b>Top 100</b><span><span lang-en>Andrew Martin global designers</span><span lang-zh>安德鲁·马丁全球设计师</span></span></div>
       </div>
     </div>
   </section>
@@ -292,7 +294,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
       <div>
         <span class="eyebrow"><span lang-en>The studio</span><span lang-zh>关于我们</span></span>
         <h2 style="margin-top:12px"><span lang-en>Design that performs — commercially and emotionally.</span><span lang-zh>兼具商业价值与情感温度的设计。</span></h2>
-        <p><span lang-en>Led by <b>[DESIGNER NAME]</b>, modhome works at the intersection of luxury and return on investment. For developers such as C&amp;D, China Merchants, Poly and CRCC, our show flats and sales centres are built to convert visitors into buyers. For private clients, we design homes that hold up to daily life as beautifully as they photograph.</span><span lang-zh>由 <b>[设计师姓名]</b> 领衔，modhome 在奢华美学与投资回报之间找到平衡。我们为建发、招商、保利、中铁建等开发商打造的样板间与售楼处，以促成成交为目标；为私人业主设计的家，则既经得起镜头，也经得起生活。</span></p>
+        <p><span lang-en>Led by <b>Jay</b> — named among Andrew Martin's Global Top 100 designers and a 40 Under 40 China Outstanding Young Designer — modhome works at the intersection of luxury and return on investment. For developers such as C&amp;D, China Merchants, Poly and CRCC, our show flats and sales centres are built to convert visitors into buyers. For private clients, we design homes that hold up to daily life as beautifully as they photograph.</span><span lang-zh>由 <b>Jay</b>（安德鲁·马丁全球 TOP 100 设计师、40 UNDER 40 中国杰出青年设计师）领衔，modhome 在奢华美学与投资回报之间找到平衡。我们为建发、招商、保利、中铁建等开发商打造的样板间与售楼处，以促成成交为目标；为私人业主设计的家，则既经得起镜头，也经得起生活。</span></p>
         <p><span lang-en>Every project begins with the question of who will walk through the door — and what they should feel in the first ten seconds.</span><span lang-zh>每个项目都始于同一个问题：谁会走进这扇门，他们在最初十秒应感受到什么。</span></p>
         <ul class="studio-list">
           <li><b><span lang-en>Residential</span><span lang-zh>住宅</span></b><span><span lang-en>Show flats, villas, lofts and private residences — 15 commissions</span><span lang-zh>样板间、别墅、LOFT 与私宅 — 15 个作品</span></span></li>
@@ -308,13 +310,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
       <div class="sec-head">
         <div>
           <span class="eyebrow"><span lang-en>Recognition</span><span lang-zh>荣誉与奖项</span></span>
-          <h2 style="margin-top:12px"><span lang-en>Recognised by the industry's top juries.</span><span lang-zh>获业界顶级评审认可。</span></h2>
+          <h2 style="margin-top:12px"><span lang-en>Recognised by the industry's most exacting juries.</span><span lang-zh>获业界最严苛评审的认可。</span></h2>
         </div>
       </div>
       <div class="awards-grid">
-        <div class="award ph"><svg class="laurel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3v18M12 21c-3-1-6-4-6-8M12 21c3-1 6-4 6-8M12 17c-2-.5-4-2.5-4-5M12 17c2-.5 4-2.5 4-5M12 13c-1.5-.5-3-2-3-4M12 13c1.5-.5 3-2 3-4"/></svg><h3>[AWARD NAME]</h3><span>[CATEGORY · YEAR]</span></div>
-        <div class="award ph"><svg class="laurel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3v18M12 21c-3-1-6-4-6-8M12 21c3-1 6-4 6-8M12 17c-2-.5-4-2.5-4-5M12 17c2-.5 4-2.5 4-5M12 13c-1.5-.5-3-2-3-4M12 13c1.5-.5 3-2 3-4"/></svg><h3>[AWARD NAME]</h3><span>[CATEGORY · YEAR]</span></div>
-        <div class="award ph"><svg class="laurel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3v18M12 21c-3-1-6-4-6-8M12 21c3-1 6-4 6-8M12 17c-2-.5-4-2.5-4-5M12 17c2-.5 4-2.5 4-5M12 13c-1.5-.5-3-2-3-4M12 13c1.5-.5 3-2 3-4"/></svg><h3>[AWARD NAME]</h3><span>[CATEGORY · YEAR]</span></div>
+        <div class="award"><svg class="laurel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3v18M12 21c-3-1-6-4-6-8M12 21c3-1 6-4 6-8M12 17c-2-.5-4-2.5-4-5M12 17c2-.5 4-2.5 4-5M12 13c-1.5-.5-3-2-3-4M12 13c1.5-.5 3-2 3-4"/></svg><h3><span lang-en>Andrew Martin International Interior Design Awards</span><span lang-zh>安德鲁·马丁国际室内设计大奖</span></h3><p><span lang-en>Named among the <b>Global Top 100</b> interior designers — the industry's most widely cited international honour.</span><span lang-zh>入选<b>全球 TOP 100</b> 设计师——被誉为室内设计界的"奥斯卡"。</span></p><span><span lang-en>Global Top 100 Designers</span><span lang-zh>全球 TOP 100 设计师</span></span></div>
+        <div class="award"><svg class="laurel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3v18M12 21c-3-1-6-4-6-8M12 21c3-1 6-4 6-8M12 17c-2-.5-4-2.5-4-5M12 17c2-.5 4-2.5 4-5M12 13c-1.5-.5-3-2-3-4M12 13c1.5-.5 3-2 3-4"/></svg><h3><span lang-en>40 UNDER 40</span><span lang-zh>40 UNDER 40</span></h3><p><span lang-en>Recognised as a <b>China Outstanding Young Designer</b> — the national list of the country's most influential designers under forty.</span><span lang-zh>获评<b>中国杰出青年设计师</b>——中国设计界最具影响力的四十岁以下设计师榜单。</span></p><span><span lang-en>China Outstanding Young Designer</span><span lang-zh>中国杰出青年设计师</span></span></div>
       </div>
       <div class="clients">
         <span class="eyebrow"><span lang-en>Trusted by</span><span lang-zh>合作客户</span></span>
@@ -348,12 +349,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
         <h2 style="margin-top:12px"><span lang-en>Tell us about your space.</span><span lang-zh>聊聊您的空间。</span></h2>
         <p><span lang-en>Share a few details and we'll come back within one working day with next steps. Developer briefs, private residences and commercial fit-outs are all welcome.</span><span lang-zh>留下几项信息，我们将在一个工作日内回复下一步安排。欢迎开发商项目、私人住宅与商业空间咨询。</span></p>
         <ul class="contact-list">
-          <li><b><span lang-en>WhatsApp</span><span lang-zh>WhatsApp</span></b><a href="https://wa.me/6500000000" target="_blank" rel="noopener">[+65 0000 0000]</a></li>
+          <li><b><span lang-en>WhatsApp</span><span lang-zh>WhatsApp</span></b><a href="https://wa.me/6596908181" target="_blank" rel="noopener">+65 9690 8181</a></li>
           <li><b><span lang-en>Email</span><span lang-zh>邮箱</span></b><a href="mailto:[hello@modhome.design]">[hello@modhome.design]</a></li>
           <li><b><span lang-en>WeChat</span><span lang-zh>微信</span></b><span>[WeChat ID]</span></li>
           <li><b><span lang-en>Studio</span><span lang-zh>地址</span></b><span>[Studio address · City]</span></li>
+          <li><b>TikTok</b><a href="https://www.tiktok.com/@jay283613" target="_blank" rel="noopener">@jay283613</a></li>
         </ul>
-        <a class="wa" href="https://wa.me/6500000000?text=Hello%20modhome%2C%20I%27d%20like%20to%20enquire%20about%20an%20interior%20design%20project." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2l-.5-.3z"/></svg><span lang-en>Chat on WhatsApp</span><span lang-zh>WhatsApp 即时沟通</span></a>
+        <a class="wa" href="https://wa.me/6596908181?text=Hello%20modhome%2C%20I%27d%20like%20to%20enquire%20about%20an%20interior%20design%20project." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2l-.5-.3z"/></svg><span lang-en>Chat on WhatsApp</span><span lang-zh>WhatsApp 即时沟通</span></a>
       </div>
       <form id="enq" novalidate>
         <div class="f"><label for="name"><span lang-en>Name</span><span lang-zh>姓名</span></label><input id="name" name="name" autocomplete="name" required><span class="err"><span lang-en>Please enter your name.</span><span lang-zh>请填写姓名。</span></span></div>
@@ -397,7 +399,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
   </div>
 </footer>
 
-<a class="fab" href="https://wa.me/6500000000?text=Hello%20modhome%2C%20I%27d%20like%20to%20enquire%20about%20an%20interior%20design%20project." target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2l-.5-.3z"/></svg></a>
+<a class="fab" href="https://wa.me/6596908181?text=Hello%20modhome%2C%20I%27d%20like%20to%20enquire%20about%20an%20interior%20design%20project." target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2l-.5-.3z"/></svg></a>
 
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Project">
   <div class="lb-in">
