@@ -67,23 +67,57 @@ footer .logo img{height:40px}
 .mobile-menu{display:none;position:fixed;inset:68px 0 0 0;background:var(--bg);z-index:49;padding:32px 24px;flex-direction:column;gap:22px;font-family:var(--display);font-size:28px}
 .mobile-menu.open{display:flex}
 
-/* hero */
-.hero{padding:72px 0 0}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:end}
-.hero h1{font-size:clamp(42px,5.6vw,80px)}
-.hero h1 em{font-style:italic;font-weight:400;color:var(--ink)}
-.hero-copy{display:flex;flex-direction:column;gap:28px;padding-bottom:36px}
-.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
-.hero-media{position:relative}
-.hero-media img{aspect-ratio:4/5;object-fit:cover;width:100%;box-shadow:var(--shadow)}
-.hero-media::before{content:"";position:absolute;inset:-18px 18px 18px -18px;border:1px solid var(--gold-light);z-index:-1}
-.hero-media{isolation:isolate}
-.hero-media figcaption{position:absolute;left:0;bottom:0;transform:translate(-24px,24px);background:#fff;border:1px solid var(--gold-light);padding:14px 18px;font-size:13px;letter-spacing:.06em;color:var(--ink2)}
-.hero-media figcaption b{display:block;font-family:var(--display);font-size:18px;font-weight:400;color:var(--ink);letter-spacing:0}
-@media (max-width:900px){.hero{padding-top:44px}.hero-grid{grid-template-columns:1fr;gap:36px}.hero-media figcaption{transform:none;position:static;border-top:0}.hero-copy{padding-bottom:0}}
+/* hero — full-bleed slideshow */
+.hero{position:relative;height:calc(100svh - 68px);min-height:620px;max-height:980px;overflow:hidden;background:#15130F;color:#fff;isolation:isolate}
+.slides{position:absolute;inset:0;z-index:0}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease;will-change:opacity}
+.slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform 9s linear}
+.slide.on{opacity:1;z-index:1}
+.slide.on img{transform:scale(1.10)}
+.hero-shade{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(12,9,4,.28) 0%,rgba(12,9,4,.06) 32%,rgba(12,9,4,.22) 58%,rgba(12,9,4,.82) 100%)}
+.hero-shade::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,9,4,.55) 0%,rgba(12,9,4,.15) 55%,transparent 100%)}
+.hero-inner{position:relative;z-index:3;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:64px}
+.hero-copy{display:flex;flex-direction:column;gap:24px;max-width:760px}
+.hero .eyebrow{color:var(--gold-light)}
+.hero h1{font-size:clamp(38px,4.9vw,70px);color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.25)}
+.hero h1 em{font-style:italic;font-weight:400;color:#fff}
+.hero .lead{color:rgba(255,255,255,.86);font-size:16px;max-width:60ch;line-height:1.6}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:6px}
+.hero .btn{border-color:rgba(255,255,255,.6);color:#fff}
+.hero .btn:hover{background:#fff;color:var(--ink);border-color:#fff}
+.hero .btn.solid{background:#fff;color:var(--ink);border-color:#fff}
+.hero .btn.solid:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.hero-ui{position:absolute;right:0;bottom:0;left:0;z-index:4;pointer-events:none}
+.hero-ui .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:22px}
+.hero-cap{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72);display:flex;align-items:center;gap:14px}
+.hero-cap::before{content:"";width:28px;height:1px;background:var(--gold-light)}
+.hero-cap b{font-weight:600;color:#fff}
+.hero-nav{display:flex;align-items:center;gap:18px;pointer-events:auto;margin-right:76px}
+.dots{display:flex;gap:8px}
+.dots button{width:34px;height:2px;padding:0;background:rgba(255,255,255,.35);position:relative;overflow:hidden;transition:background .3s}
+.dots button::after{content:"";position:absolute;inset:0;background:var(--gold-light);transform:scaleX(0);transform-origin:left}
+.dots button[aria-current="true"]::after{transform:scaleX(1);transition:transform var(--hero-dur,7s) linear}
+.hero.paused .dots button[aria-current="true"]::after{transition:none;transform:scaleX(1)}
+.arrow{width:44px;height:44px;border:1px solid rgba(255,255,255,.45);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .25s,border-color .25s}
+.arrow:hover{background:#fff;color:var(--ink);border-color:#fff}
+.arrow svg{width:16px;height:16px}
+.hero-ctas{pointer-events:auto}
+@media (max-width:900px){
+  .hero{height:calc(100svh - 68px);min-height:560px}
+  .hero-inner{padding-bottom:92px}
+  .hero .lead{display:none}
+  .hero-copy{gap:20px}
+  .hero-ui .wrap{flex-direction:row;align-items:center;padding-bottom:18px}
+  .hero-nav{margin-right:0}
+  .hero-cap{display:none}
+  .arrow{width:38px;height:38px}
+  .dots button{width:22px}
+}
+@media (max-height:820px){.hero .lead{display:none}.hero-inner{padding-bottom:84px}}
+@media (prefers-reduced-motion:reduce){.slide img{transform:none!important;transition:none!important}.slide{transition:opacity .4s}}
 
 /* award strip */
-.strip{margin-top:72px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+.strip{margin-top:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
 .strip .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
 .strip div{padding:26px 24px 26px 0;border-right:1px solid var(--line)}
 .strip div:last-child{border-right:0}
@@ -253,8 +287,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
 </div>
 
 <main id="top">
-  <section class="hero" style="padding-bottom:0">
-    <div class="wrap hero-grid">
+  <section class="hero" id="hero" aria-roledescription="carousel">
+    <div class="slides" id="slides">
+<div class="slide on" data-slug="cnd-haipai-sales" data-en="C&D Haipai Sales Centre · Shanghai" data-zh="建发海派售楼处 · 上海"><img src="img/hero-1.webp" alt="C&D Haipai Sales Centre" fetchpriority=high></div>
+<div class="slide" data-slug="hubin-sili" data-en="Hubin Sili · China" data-zh="湖滨四里 · 中国"><img src="img/hero-2.webp" alt="Hubin Sili" decoding=async></div>
+<div class="slide" data-slug="qingyun-sales" data-en="Qingyun Sales Centre · Changshu" data-zh="招商常熟青云瑧境售楼处 · 常熟"><img src="img/hero-3.webp" alt="Qingyun Sales Centre" decoding=async></div>
+<div class="slide" data-slug="seletar-airport" data-en="Seletar Airport · Singapore" data-zh="Seletar 机场 · 新加坡"><img src="img/hero-4.webp" alt="Seletar Airport" decoding=async></div>
+<div class="slide" data-slug="cnd-haipai-residence" data-en="C&D Haipai Residence · Shanghai" data-zh="建发海派 · 上海"><img src="img/hero-5.webp" alt="C&D Haipai Residence" decoding=async></div>
+<div class="slide" data-slug="yuelan-court-sales" data-en="Yuelan Court Sales Centre · Changzhou" data-zh="常州樾澜庭售楼处 · 常州"><img src="img/hero-6.webp" alt="Yuelan Court Sales Centre" decoding=async></div>
+    </div>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
       <div class="hero-copy">
         <span class="eyebrow"><span class="r-intl"><span lang-en>Jay Li · Andrew Martin Global Top 100 · 40 Under 40 · Singapore &amp; China</span><span lang-zh>李天弘 · 安德鲁·马丁全球 TOP 100 · 40 UNDER 40 · 新加坡 &amp; 中国</span></span><span class="r-sg"><span lang-en>Singapore · Jay Li · Andrew Martin Global Top 100 · 40 Under 40</span><span lang-zh>新加坡 · 李天弘 · 安德鲁·马丁全球 TOP 100 · 40 UNDER 40</span></span></span>
         <h1>
@@ -270,11 +313,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
           <a class="btn" href="#works"><span lang-en>Explore the portfolio</span><span lang-zh>浏览作品集</span></a>
         </div>
       </div>
-      <figure class="hero-media" style="margin:0">
-        <img src="img/cnd-haipai-sales-studio-lg.webp" alt="C&D Haipai Sales Centre" fetchpriority="high">
-        <figcaption><span lang-en>Featured commission</span><span lang-zh>精选作品</span><b>C&D Haipai Sales Centre · Shanghai</b></figcaption>
-      </figure>
     </div>
+    <div class="hero-ui">
+      <div class="wrap">
+        <div class="hero-cap" id="hero-cap" aria-live="polite"></div>
+        <div class="hero-nav">
+          <button class="arrow" id="hero-prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+          <div class="dots" id="hero-dots" role="tablist"></div>
+          <button class="arrow" id="hero-next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="strip-wrap">
     <div class="strip">
       <div class="wrap">
         <div><b>38</b><span><span lang-en>Completed projects</span><span lang-zh>落地项目</span></span></div>
@@ -283,7 +334,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
         <div><b>Top 100</b><span><span lang-en>Andrew Martin global designers</span><span lang-zh>安德鲁·马丁全球设计师</span></span></div>
       </div>
     </div>
-  </section>
+  </div>
 
   <section id="works">
     <div class="wrap">
@@ -569,6 +620,39 @@ form.addEventListener("submit", async e=>{
 });
 
 setLang(lang); setRegion(region, false);
+
+/* hero slideshow */
+(function(){
+  const hero=document.getElementById("hero"), slides=[...document.querySelectorAll("#slides .slide")];
+  if(slides.length<2) return;
+  const dots=document.getElementById("hero-dots"), cap=document.getElementById("hero-cap");
+  const DUR=7000; hero.style.setProperty("--hero-dur",DUR+"ms");
+  let cur=0, timer=null, paused=false;
+  slides.forEach((s,i)=>{const b=document.createElement("button");b.setAttribute("role","tab");b.setAttribute("aria-label","Slide "+(i+1));b.addEventListener("click",()=>go(i,true));dots.appendChild(b);});
+  function caption(s){cap.innerHTML='<span lang-en><b>'+s.dataset.en+'</b></span><span lang-zh><b>'+s.dataset.zh+'</b></span>';}
+  function go(n,user){
+    slides[cur].classList.remove("on"); dots.children[cur].removeAttribute("aria-current");
+    cur=(n+slides.length)%slides.length;
+    const s=slides[cur]; s.classList.add("on"); caption(s);
+    // restart progress bar
+    const d=dots.children[cur]; d.removeAttribute("aria-current"); void d.offsetWidth; d.setAttribute("aria-current","true");
+    schedule();
+  }
+  function schedule(){clearTimeout(timer); if(!paused) timer=setTimeout(()=>go(cur+1),DUR);}
+  document.getElementById("hero-next").addEventListener("click",()=>go(cur+1,true));
+  document.getElementById("hero-prev").addEventListener("click",()=>go(cur-1,true));
+  hero.addEventListener("mouseenter",()=>{paused=true;hero.classList.add("paused");clearTimeout(timer);});
+  hero.addEventListener("mouseleave",()=>{paused=false;hero.classList.remove("paused");go(cur);});
+  document.addEventListener("visibilitychange",()=>{if(document.hidden){clearTimeout(timer);}else{schedule();}});
+  // touch swipe
+  let x0=null; hero.addEventListener("touchstart",e=>{x0=e.touches[0].clientX},{passive:true});
+  hero.addEventListener("touchend",e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>40)go(cur+(dx<0?1:-1),true);},{passive:true});
+  // Singapore visitors open on the Singapore commission
+  const sgIdx=slides.findIndex(s=>s.dataset.slug==="seletar-airport");
+  const start=(region==="sg"&&sgIdx>-1)?sgIdx:0;
+  slides[0].classList.remove("on"); cur=start; slides[cur].classList.add("on"); caption(slides[cur]);
+  dots.children[cur].setAttribute("aria-current","true"); schedule();
+})();
 </script>
 
 </body>
